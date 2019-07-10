@@ -10,7 +10,7 @@ politicianButtons();
  function politicianButtons() {
     $("#gifButtons").empty();
     for (var i = 0; i < topics.length; i++){
-        $("#gifButtons").append("<button class='btn btn-info m-2 topicButton' data-person=" + topics[i] + ">" + topics[i] + "</button>");
+        $("#gifButtons").append("<button class='btn btn-info m-2 topicButton' data-person='" + topics[i] + "'>" + topics[i] + "</button>");
       }
 };
 
@@ -20,9 +20,7 @@ politicianButtons();
       $("#gifDisplay").empty();
     var politician = $(this).attr("data-person");
     console.log(politician);
-    var searchPolitician = politician.replace(" ", "+");
-    console.log(searchPolitician);
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchPolitician + "&api_key=uCO577Cm4JScLTXEm3bCjg2b636mQ8dq&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + politician + "&api_key=uCO577Cm4JScLTXEm3bCjg2b636mQ8dq&limit=10";
 
     $.ajax({
         url: queryURL,
@@ -38,6 +36,7 @@ politicianButtons();
     });
   });  
 
+//function to add a new politican to the buttons after typing it in the input box
   $("#addButton").on("click", function(event) {
     event.preventDefault();
     var gif = $("input").val().trim();
