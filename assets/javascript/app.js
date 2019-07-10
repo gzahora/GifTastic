@@ -1,5 +1,5 @@
 //Initial Array of Politicians
-var topics = ["Elizabeth Warren", "Mitch McConnell", "Joe Biden", "Cory Booker", "Kamala Harris", "Pete Buttigieg", "Lindsey Graham", "Bernie Sanders"];
+var topics = ["Elizabeth+Warren", "Mitch McConnell", "Joe Biden", "Cory Booker", "Kamala Harris", "Pete Buttigieg", "Lindsey Graham", "Bernie Sanders"];
 
  // Function for displaying buttons that first clears the div holding the buttons, then re-adds what is in the topic array
  function politicianButtons() {
@@ -25,6 +25,7 @@ $("#addButton").on("click", function(event) {
     var politician = $(this).attr("data-person");
     console.log(politician);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + politician + "&api_key=uCO577Cm4JScLTXEm3bCjg2b636mQ8dq&limit=10";
+    console.log(queryURL);
 
     //Ajax call for Giphy API
     $.ajax({
