@@ -1,5 +1,5 @@
 //Initial Array of Politicians
-var topics = ["Elizabeth+Warren", "Mitch McConnell", "Joe Biden", "Cory Booker", "Kamala Harris", "Pete Buttigieg", "Lindsey Graham", "Bernie Sanders"];
+var topics = ["Elizabeth Warren", "Mitch McConnell", "Joe Biden", "Cory Booker", "Kamala Harris", "Pete Buttigieg", "Lindsey Graham", "Bernie Sanders"];
 
  // Function for displaying buttons that first clears the div holding the buttons, then re-adds what is in the topic array
  function politicianButtons() {
