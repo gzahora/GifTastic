@@ -40,12 +40,15 @@ $("#addButton").on("click", function(event) {
         //variables needed for still and animated gifs
         var still = response.data[i].images.fixed_height_still.url;
         var animate = response.data[i].images.fixed_height.url;
+
+        var gifContainer = $("<div style='display: inline-block' class='m-2'>");
+        $("#gifDisplay").append(gifContainer);
         
         //display gifs in their still version, but add attributes for the animated version and for the ability of the next function to switch between the two
-        $("#gifDisplay").append("<img src ='" + still + "' data-still='" + still + "' data-animate='" + animate + "' data-state='still' class='changeState'></img>")
+        $(gifContainer).append("<img src ='" + still + "' data-still='" + still + "' data-animate='" + animate + "' data-state='still' class='changeState'></img>")
         
         //display the gif ratings
-        $("#gifDisplay").append("<p><strong>Rating: " + response.data[i].rating + "</strong></p>")
+        $(gifContainer).append("<p><strong>Rating: " + response.data[i].rating + "</strong></p>")
         }
     });
   }); 
